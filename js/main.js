@@ -1,4 +1,4 @@
-// ===== Navigation Menu Toggle =====
+// Navigation menu toggle
 const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
 const navLinks = document.querySelectorAll('.nav__link');
@@ -16,7 +16,7 @@ navLinks.forEach(link => {
     });
 });
 
-// ===== Active Link on Scroll =====
+// Active link on scroll
 const sections = document.querySelectorAll('section[id]');
 
 function scrollActive() {
@@ -38,10 +38,10 @@ function scrollActive() {
 
 window.addEventListener('scroll', scrollActive);
 
-// ===== Projects Loading =====
+// Projects loading
 const projectsGrid = document.getElementById('projectsGrid');
 
-// Function to create project card HTML
+// Create project card HTML
 function createProjectCard(project) {
     const linksHTML = Object.entries(project.links)
         .map(([type, url]) => {
@@ -108,7 +108,7 @@ function loadProjects() {
     }
 }
 
-// ===== Project Modal Management =====
+// Project modal management
 let currentProject = null;
 let currentGalleryIndex = 0;
 
@@ -363,7 +363,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loadProjects();
 });
 
-// ===== Smooth Scroll for Links =====
+// Smooth scroll for links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -382,7 +382,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ===== Header Shadow on Scroll =====
+// Header shadow on scroll
 const header = document.querySelector('.header');
 
 window.addEventListener('scroll', () => {
@@ -393,7 +393,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// ===== Intersection Observer for Animations =====
+// Intersection observer for animations
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -100px 0px'

@@ -1,6 +1,3 @@
-// Projects Data
-// Modifica questo file per aggiungere, rimuovere o modificare i tuoi progetti
-
 const projectsData = [
     {
         id: 1,
@@ -55,6 +52,20 @@ const projectsData = [
     },
     {
         id: 4,
+        title: "Distributed Monitor System",
+        shortDescription: "A distrubuted monitor system simulation that keeps track of air pollution levels in a neighborhood of a smart city.",
+        detailedDescription: "The project aims to implement a distributed monitoring system for air pollution levels in a smart city neighborhood. The neighborhood contains multiple nodes equipped with PM10 sensors. For privacy reasons, these nodes must communicate and coordinate with each other to send aggregated pollution data to a smart city gateway.\nThe gateway stores this aggregated data and makes it accessible to analysts. Analysts can query the gateway to obtain statistics on pollution levels.\nThe system consists of three main components: Node, Gateway, and Analyst Client. The node network comprises a set of processes simulating neighborhood nodes with attached PM10 sensors. These processes coordinate to transmit measurements to the Gateway. Nodes can be dynamically added or removed from the network.\nThe Gateway is a server responsible for receiving and storing data from the nodes. It also provides a remote monitoring system that allows different types of queries about the system state. Analysts perform these queries using the dedicated Analyst client.",
+        technologies: ["Java", "Gradle", "IntelliJ IDEA"],
+        projectThumbnail: "assets/images/distributed_system/dms-main.png",
+        gallery: [
+            { type: "image", url: "assets/images/distributed_system/dms-main.png" },
+        ],
+        links: {
+            github: "https://github.com/maghez-dev/SDP_Project",
+        }
+    },
+    {
+        id: 5,
         title: "Animalese Keyboard",
         shortDescription: "AnimaleseKeyboard is a project born from curiosity and experimentation on creating a virtual keyboard for Android devices.",
         detailedDescription: "The goal is to give and alternative to the standard Google Keyboard, with a colorful background and pitched sound upon letters press that resembles the speech from animals in the popular game franchise Animal Crossing. ",
@@ -68,7 +79,7 @@ const projectsData = [
         }
     },
     {
-        id: 5,
+        id: 6,
         title: "Spaghettosis",
         shortDescription: "Spaghettosis is a game project made for the SPAGHETTI INVASION GAME JAM 2025.",
         detailedDescription: "This project has been made in a couple of months as a personal challenge, with a help from a small team of passionate game developers.\nThe game consists in a short FPS adventure set in a Naples recently invaded by spaghetti-shaped aliens, in wich the player must venture to survive and find food for himself.",
