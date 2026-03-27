@@ -94,5 +94,19 @@ const projectsData = [
         links: {
             website: "https://yozuki.itch.io/spaghettosis",
         }
+    },
+    {
+        id: 7,
+        title: "Lock-Free Stack",
+        shortDescription: "A short experimental project to learn about Rust and low-level memory management.",
+        detailedDescription: "The project consists in the implementation of a lock-free stack data structure in Rust, using atomic operations and memory management techniques to ensure thread safety and performance. The stack is designed to be used in concurrent environments, allowing multiple threads to push and pop elements without the need for locks or mutexes.\nA project born for curiosity and experimentation on Rust and low-level memory management, with the goal of learning about lock-free data structures and their implementation in Rust.",
+        technologies: ["Rust", "Cargo", "Visual Studio Code"],
+        projectThumbnail: "assets/images/lock_free_stack/thumbnail.jpg",
+        gallery: [
+            { type: "image", url: "assets/images/lock_free_stack/thumbnail.jpg" },
+        ],
+        links: {
+            github: "https://github.com/maghez-dev/LockFreeStack",
+        }
     }
 ];
