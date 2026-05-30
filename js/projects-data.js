@@ -108,5 +108,20 @@ const projectsData = [
         links: {
             github: "https://github.com/maghez-dev/LockFreeStack",
         }
+    },
+        {
+        id: 8,
+        title: "Space Ray",
+        shortDescription: "A simple C++ project to explore low-level game programming.",
+        detailedDescription: "Space Ray is a simple 2D twin-stick space shooter written in C++ with raylib.\nIt's a personal project built to explore low-level game programming: game loop, state management, rendering, audio, entity architecture and cross-platform compatibility.\nThe gamplay loop consists in moving around an endless space, shooting enemies that spawn dynamically around the camera with difficulty that scales with the number of active enemies and their speed. The run ends when the health bar is depleted, and the goal is to reach the highest possible score (recalling old arcade shooters).",
+        technologies: ["C++20", "Raylib", "CMake", "Visual Studio Code"],
+        projectThumbnail: "assets/images/space_ray/main.png",
+        gallery: [
+            { type: "image", url: "assets/images/space_ray/sr0.png" },
+            { type: "image", url: "assets/images/space_ray/main.png" },
+        ],
+        links: {
+            github: "https://github.com/maghez-dev/SpaceRay",
+        }
     }
 ];
