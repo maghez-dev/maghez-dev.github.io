@@ -106,7 +106,7 @@ const projectsData = [
             { type: "image", url: "assets/images/lock_free_stack/thumbnail.jpg" },
         ],
         links: {
-            github: "https://github.com/maghez-dev/LockFreeStack",
+            gitlab: "https://gitlab.com/maghez-dev/rust-lock-free-stack",
         }
     },
         {

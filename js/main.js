@@ -54,6 +54,9 @@ function createProjectCard(project) {
             } else if (type === 'github') {
                 icon = '💻';
                 label = 'GitHub';
+            } else if (type === 'gitlab') {
+                icon = '🦊';
+                label = 'GitLab';
             } else if (type === 'website') {
                 icon = '🌐';
                 label = 'Website';
@@ -186,6 +189,9 @@ function openProjectModal(project) {
                 } else if (type === 'github') {
                     icon = '💻';
                     label = 'GitHub';
+                } else if (type === 'gitlab') {
+                    icon = '🦊';
+                    label = 'GitLab';
                 } else if (type === 'website') {
                     icon = '🌐';
                     label = 'Website';
