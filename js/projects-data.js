@@ -1,9 +1,104 @@
+/**
+ * projects-data.js
+ * ----------------
+ * Single source of truth for all portfolio projects. Add a new entry to
+ * the `projectsData` array below to make a project appear on the site.
+ * No other file needs to be touched: the grid, the cards and the modal
+ * are all rendered dynamically from this data (see js/projects.js and
+ * js/modal.js).
+ *
+ * FIELDS
+ * ------
+ *  id                 {number}  Unique numeric identifier.
+ *  title               {string}  Project title.
+ *  shortDescription    {string}  One-liner shown on the project card
+ *                                  (plain text, no markdown).
+ *  detailedDescription {string}  Rich text shown inside the project modal.
+ *                                  Supports the lightweight markdown syntax
+ *                                  described below (see js/markdown.js).
+ *  technologies         {string[]} List of tech tags (e.g. "C#", "Unity").
+ *  projectThumbnail     {string}  Path to the image used on the card.
+ *  gallery               {Array}   List of `{ type: "image"|"video", url }`
+ *                                  items shown in the modal gallery.
+ *  links                 {Object}  Map of link-type -> url. Supported
+ *                                  types (each gets its own icon/label,
+ *                                  see getLinkMeta() in js/projects.js):
+ *                                    - website
+ *                                    - github
+ *                                    - gitlab
+ *                                    - demo
+ *                                  Any other key is also accepted and will
+ *                                  fall back to a generic 🔗 icon.
+ *
+ * DETAILED DESCRIPTION SYNTAX
+ * ----------------------------
+ * `detailedDescription` is plain text with a small, easy-to-read markdown
+ * dialect, parsed by renderMarkdown() (js/markdown.js). All text is
+ * HTML-escaped first, so this is safe from HTML injection.
+ *
+ *   ## Section title       -> rendered as a <h3> section heading
+ *   - list item             -> rendered as a bullet list item
+ *   1. list item            -> rendered as a numbered list item
+ *   **bold text**            -> <strong>
+ *   *italic text*             -> <em>
+ *   `inline code`             -> <code>
+ *   [label](https://url)      -> clickable link
+ *   (blank line)               -> starts a new paragraph
+ *
+ * Example:
+ *
+ *   "A short intro paragraph about the project.\n" +
+ *   "\n" +
+ *   "## My Role\n" +
+ *   "- Did **this** important thing\n" +
+ *   "- Helped with `some_module.cpp`\n" +
+ *   "\n" +
+ *   "## Challenges\n" +
+ *   "Explained in a normal paragraph, with a [reference link](https://example.com)."
+ *
+ * TEMPLATE FOR A NEW PROJECT
+ * ---------------------------
+ * Copy the block below into the `projectsData` array and fill it in:
+ *
+ *   {
+ *       id: 99,
+ *       title: "Project Title",
+ *       shortDescription: "One short sentence describing the project.",
+ *       detailedDescription:
+ *           "Intro paragraph.\n" +
+ *           "\n" +
+ *           "## My Role\n" +
+ *           "- Point one\n" +
+ *           "- Point two\n" +
+ *           "\n" +
+ *           "## Notes\n" +
+ *           "Any extra paragraph, with **bold**, *italic*, `code` or a [link](https://example.com).",
+ *       technologies: ["Tech1", "Tech2"],
+ *       projectThumbnail: "assets/images/project_folder/thumbnail.png",
+ *       gallery: [
+ *           { type: "image", url: "assets/images/project_folder/img1.png" },
+ *           { type: "video", url: "assets/images/project_folder/clip.mp4" },
+ *       ],
+ *       links: {
+ *           github: "https://github.com/username/repo",
+ *       }
+ *   },
+ */
 const projectsData = [
     {
         id: 1,
         title: "Rogue Cleaner",
         shortDescription: "Rogue Cleaner is a game project created for the Videogams Design and Programming course at POLIMI in 2020/2021.",
-        detailedDescription: "The game is a metroidvania single player 2D platformer set inside an old computer with a cyberpunk and retro aesthetic.\nThere are also many references, like known antivirus programs and file extensions as enemies.\nFor this project, made in a small team, i took care of:\n- Player movement, weapons, abilities and related animations.\n- Boss fight: AI, environment and related sprite animations.\n- Audio transition and programming\n- Some environment bameplay objects (fans, elevators, and others)",
+        detailedDescription:
+            "The game is a metroidvania single player 2D platformer set inside an old computer with a cyberpunk and retro aesthetic.\n" +
+            "There are also many references, like known antivirus programs and file extensions as enemies.\n" +
+            "\n" +
+            "## My Role\n" +
+            "For this project, made in a small team, I took care of:\n" +
+            "- Player movement, weapons, abilities and related animations\n" +
+            "- Boss fight: AI, environment and related sprite animations\n" +
+            "- Audio transition and programming\n" +
+            "- Some environment gameplay objects (fans, elevators, and others)",
         technologies: ["C#", "Unity", "Visual Studio"],
         projectThumbnail: "assets/images/rogue_cleaner/rc-main.png",
         gallery: [
@@ -54,7 +149,19 @@ const projectsData = [
         id: 4,
         title: "Distributed Monitor System",
         shortDescription: "A distrubuted monitor system simulation that keeps track of air pollution levels in a neighborhood of a smart city.",
-        detailedDescription: "The project aims to implement a distributed monitoring system for air pollution levels in a smart city neighborhood. The neighborhood contains multiple nodes equipped with PM10 sensors. For privacy reasons, these nodes must communicate and coordinate with each other to send aggregated pollution data to a smart city gateway.\nThe gateway stores this aggregated data and makes it accessible to analysts. Analysts can query the gateway to obtain statistics on pollution levels.\nThe system consists of three main components: Node, Gateway, and Analyst Client. The node network comprises a set of processes simulating neighborhood nodes with attached PM10 sensors. These processes coordinate to transmit measurements to the Gateway. Nodes can be dynamically added or removed from the network.\nThe Gateway is a server responsible for receiving and storing data from the nodes. It also provides a remote monitoring system that allows different types of queries about the system state. Analysts perform these queries using the dedicated Analyst client.",
+        detailedDescription:
+            "The project aims to implement a distributed monitoring system for air pollution levels in a smart city neighborhood. " +
+            "The neighborhood contains multiple nodes equipped with PM10 sensors. For privacy reasons, these nodes must communicate " +
+            "and coordinate with each other to send aggregated pollution data to a smart city gateway.\n" +
+            "The gateway stores this aggregated data and makes it accessible to analysts. Analysts can query the gateway to obtain " +
+            "statistics on pollution levels.\n" +
+            "\n" +
+            "## System Components\n" +
+            "- **Node**: simulates a neighborhood node with an attached PM10 sensor, coordinating with peers to transmit measurements\n" +
+            "- **Gateway**: server responsible for receiving and storing data from the nodes, and answering remote queries\n" +
+            "- **Analyst Client**: dedicated client used by analysts to query the Gateway about the system state\n" +
+            "\n" +
+            "Nodes can be dynamically added or removed from the network.",
         technologies: ["Java", "Gradle", "IntelliJ IDEA"],
         projectThumbnail: "assets/images/distributed_system/dms-main.png",
         gallery: [
@@ -109,7 +216,7 @@ const projectsData = [
             gitlab: "https://gitlab.com/maghez-dev/rust-lock-free-stack",
         }
     },
-        {
+    {
         id: 8,
         title: "Space Ray",
         shortDescription: "A simple C++ project to explore low-level game programming.",

@@ -783,6 +783,94 @@ img {
     margin-bottom: 0;
 }
 
+/* Rich markdown content rendered via js/markdown.js */
+.modal__description h3 {
+    color: var(--text-color);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.modal__description h3:first-child {
+    margin-top: 0;
+}
+
+.modal__description ul,
+.modal__description ol {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+}
+
+.modal__description ul {
+    list-style: none;
+}
+
+.modal__description ul li {
+    position: relative;
+    padding-left: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.modal__description ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+.modal__description ol {
+    list-style: decimal;
+}
+
+.modal__description ol li {
+    margin-bottom: 0.5rem;
+    padding-left: 0.25rem;
+}
+
+.modal__description ol li::marker {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.modal__description strong {
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.modal__description em {
+    color: var(--primary-light);
+    font-style: italic;
+}
+
+.modal__description code {
+    background: var(--bg-dark);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 0.15rem 0.5rem;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    color: var(--secondary-color);
+}
+
+.modal__description a {
+    color: var(--primary-color);
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: var(--transition);
+}
+
+.modal__description a:hover {
+    color: var(--primary-light);
+    text-decoration-color: var(--primary-light);
+}
+
 .modal__links {
     display: flex;
     flex-wrap: wrap;
